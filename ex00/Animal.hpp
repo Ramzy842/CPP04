@@ -6,7 +6,7 @@
 /*   By: rchahban <rchahban@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 23:31:22 by rchahban          #+#    #+#             */
-/*   Updated: 2023/12/13 00:21:19 by rchahban         ###   ########.fr       */
+/*   Updated: 2023/12/14 00:15:34 by rchahban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ class Animal {
 		Animal(std::string type);
 		Animal(const Animal& other);
 		Animal& operator=(const Animal& other);
-		~Animal();
+		virtual void makeSound() const;
+		std::string getType() const;
+		virtual ~Animal();
 };
-
 
 #endif

@@ -6,7 +6,7 @@
 #    By: rchahban <rchahban@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/12 23:31:17 by rchahban          #+#    #+#              #
-#    Updated: 2023/12/13 00:49:03 by rchahban         ###   ########.fr        #
+#    Updated: 2023/12/14 00:26:06 by rchahban         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CPP = c++
 CPPFLAGS = -Werror -Wall -Wextra -std=c++98
 
 # Source files
-SRC = main.cpp Cat.cpp Dog.cpp
+SRC = main.cpp Cat.cpp Dog.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp
 
 # Object files generated from source files
 OBJ = $(SRC:.cpp=.o)
@@ -40,7 +40,7 @@ $(NAME): $(OBJ)
 clean:
 	rm -f $(OBJ)
 
-# Fclean target to remove executable files, .replace files and finally perform clean
+# Fclean target to remove executable files and finally perform clean
 fclean: clean
 	rm -f $(NAME)
 

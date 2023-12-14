@@ -6,11 +6,28 @@
 /*   By: rchahban <rchahban@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 23:31:20 by rchahban          #+#    #+#             */
-/*   Updated: 2023/12/13 00:51:59 by rchahban         ###   ########.fr       */
+/*   Updated: 2023/12/14 00:58:59 by rchahban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int main ()
+#include "./Animal.hpp"
+#include "./Dog.hpp"
+#include "./Cat.hpp"
+#include "./WrongAnimal.hpp"
+#include "./WrongCat.hpp"
+int main()
 {
+	const WrongAnimal* meta = new WrongAnimal();
+	const Animal* j = new Dog();
+	const WrongAnimal* i = new WrongCat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
+	delete meta;
+   	delete j;
+   	delete i;
+
 	return (0);
 }
