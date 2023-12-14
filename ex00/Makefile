@@ -6,7 +6,7 @@
 #    By: rchahban <rchahban@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/12 23:31:17 by rchahban          #+#    #+#              #
-#    Updated: 2023/12/14 00:26:06 by rchahban         ###   ########.fr        #
+#    Updated: 2023/12/14 17:14:39 by rchahban         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,11 @@ CPP = c++
 # Compiler flags
 CPPFLAGS = -Werror -Wall -Wextra -std=c++98
 
+# Includes (.hpp)
+INCLUDES = -I./includes
+
 # Source files
-SRC = main.cpp Cat.cpp Dog.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp
+SRC = main.cpp ./src/Cat.cpp ./src/Dog.cpp ./src/Animal.cpp ./src/WrongAnimal.cpp ./src/WrongCat.cpp
 
 # Object files generated from source files
 OBJ = $(SRC:.cpp=.o)
@@ -30,11 +33,11 @@ all: $(NAME)
 
 # Rule to generate the main executable from the object files
 $(NAME): $(OBJ)
-	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
+	$(CPP) $(CPPFLAGS) $(INCLUDES) $(OBJ) -o $(NAME)
 
 # Rule to generate the object files from the source files
 %.o: %.cpp
-	$(CPP) $(CPPFLAGS) -c $< -o $@
+	$(CPP) $(CPPFLAGS) $(INCLUDES) -c $< -o $@
 
 # Clean target to remove generated files
 clean:
